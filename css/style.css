@@ -1,0 +1,447 @@
+:root {
+    --bk_color: #313131;
+    --bx-color: #313131;
+    --sec_color: #313131;
+    --ter_color: #fcebed;
+    --cua_color:#313131; 
+  }
+  
+  /* RESET BÁSICO */
+  *, html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /* ESTILOS GENERALES */
+  main {
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+  /*Font color all*/
+  .f-c-all-sec *{
+    color: var(--sec_color);
+  }
+  .f-c-all-ter *{
+    color: var(--ter_color);
+  }
+  .f-c-all-cua *{
+    color: var(--cua_color);
+  }
+  .wc-a-20>*{
+    width: 20%;
+  }
+  .wc-a-30>*{
+    width: 30%;
+  }
+  .wc-a-40>*{
+    width: 40%;
+  }
+  .wc-a-50>*{
+    width: 50%;
+  }
+  .wc-a-60>*{
+    width: 60%;
+  }
+  .wc-a-70>*{
+    width: 70%;
+  }
+  .wc-a-80>*{
+    width: 80%;
+  }
+  .wc-a-90>*{
+    width: 90%;
+    
+  }
+  .hc-a-10>*{
+    height: 1rem;
+  }
+  .hc-a-12>*{
+    height: 1.2rem;
+  }
+  .hc-a-14>*{
+    height: 1.4rem;
+  }
+  .hc-a-16>*{
+    height: 1.6rem;
+  }
+  .hc-a-18>*{
+    height: 1.8rem;
+  }
+  .hc-a-20>*{
+    height: 2rem;
+  }
+  .mc-a-5>*{
+    margin:5px;
+  }
+  .mc-a-10>*{
+    margin:10px;
+  }
+  /* Para centrar toda la tarjeta en pantalla */
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .flex-column{
+    flex-direction: column;
+  }
+  .allcenter {
+    justify-content: center;
+    align-items: center;
+  }
+  .bk_color_black {
+    background-color: var(--bk_color);
+  }
+  .bkc_color_sec>* {
+    background-color: var(--sec_color);
+  }
+  .bk_color_sec {
+    background-color: #faf6f7;
+  }
+  .bk_color_ter {
+    background-color: var(--ter_color);
+  }
+  .brc_all_5>* {
+    border-radius: 5px;
+  }
+  .brc_all_10>* {
+    border-radius: 10px;
+  }
+  .br_all_10 {
+    border-radius: 10px;
+  }
+  .br_all_3 {
+    border-radius: 3px;
+  }
+  
+  /* CONTENEDOR PRINCIPAL */
+  .content {
+    width: 375px;
+    height: 667px;
+    /* Para que no recorte la parte que sobresalga 
+       (especialmente la .pos_half) */
+    overflow: hidden; 
+    position: relative; /* para manejar contenido flotante si hiciera falta */
+  }
+  
+  /* CABECERA */
+  .header {
+    /* Posición relativa para ubicar elementos absolutos dentro */
+    position: relative;
+    /* Si quieres alinear contenido textual, podrías usar display: flex; etc. 
+       Pero aquí lo dejamos simple */
+  }
+  
+  .h_10{
+    /* Altura fija de ejemplo */
+    height: 100px;
+  }
+
+  .h_12{
+    /* Altura fija de ejemplo */
+    height: 120px;
+  }
+
+  .h_14{
+    /* Altura fija de ejemplo */
+    height: 140px;
+  }
+  /* CONTENEDOR DE LA IMAGEN */
+  .img {
+    /* Tamaño de la figura */
+    width: 100px; 
+    height: 100px;
+  
+    /* 
+       Posición ABSOLUTA: su referencia es .header (porque .header es position: relative).
+       Sin alguna clase extra, la figura aparecería en la esquina superior izquierda.
+    */
+    position: absolute;
+  }
+  
+  /* LA IMAGEN EN SÍ */
+  .img img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: 2;        
+  }
+  
+  /* 
+    PSEUDO-ELEMENTO PARA EL BORDE:
+    - Se dibuja DETRÁS de la imagen (z-index:1).
+    - Un poco MÁS GRANDE que la imagen (para simular el halo).
+  */
+  .img.form_border::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    background-color: black;
+    z-index: 1;
+  }
+  .img.form_border_sec::before{
+    background-color: var(--sec_color); 
+  }
+  .img.form_border_ter::before{
+    background-color: var(--ter_color); 
+  }
+  .img.form_border_cua::before{
+    background-color: var(--cua_color); 
+  }
+  /* -------------------------------------------------------------------------- */
+  /* CLASES PARA LA POSICIÓN VERTICAL/HORIZONTAL */
+  /* -------------------------------------------------------------------------- */
+  
+  /* 
+    .pos_center: Centra la figura dentro del .header 
+     (la figura queda completamente dentro).
+  */
+  .pos_center {
+    /* Pon el centro de .img en el centro de .header */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /*
+    .pos_half: Ubica la figura de tal forma que la mitad 
+    superior quede dentro del .header y la mitad inferior 
+    "flote" fuera. 
+  */
+  .pos_half {
+    /* La base de la figura se alinea con la parte baja del .header */
+    top: 100%;       /* Parte inferior del header */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Al usar translateY(-50%), la mitad de la figura queda por encima 
+       de la parte inferior => se ve mitad dentro, mitad fuera */
+  }
+  
+  /* -------------------------------------------------------------------------- */
+  /* CLASES DE FORMAS (aplican a IMAGEN y a PSEUDO-ELEMENTO) */
+  /* -------------------------------------------------------------------------- */
+  
+  /* Estrella */
+  .form_star img,
+  .form_star::before {
+    clip-path: polygon(
+      50% 0%, 61% 35%, 98% 35%,
+      68% 57%, 79% 91%, 50% 70%,
+      21% 91%, 32% 57%, 2% 35%,
+      39% 35%
+    );
+  }
+  
+  /* Círculo */
+  .form_circle img,
+  .form_circle::before {
+    clip-path: circle(50% at 50% 50%);
+  }
+  
+  /* Rombo (Diamante) */
+  .form_diamond img,
+  .form_diamond::before {
+    clip-path: polygon(
+      50% 0%, 100% 50%, 
+      50% 100%, 0% 50%
+    );
+  }
+  
+  /* Triángulo */
+  .form_triangle img,
+  .form_triangle::before {
+    clip-path: polygon(
+      50% 0%, 0% 100%, 100% 100%
+    );
+  }
+  
+  /* OTROS ESTILOS */
+  .name {
+    display: flex;
+    height: 12%;
+    justify-content: center;
+    align-items: end;
+  }
+  .br_b_c_black {
+    border-bottom-color: black;
+  }
+  .br_b_s {
+    border-bottom-style: solid;
+  }
+  .name > h3 {
+    width: 200px;
+    text-align: center;
+  }  
+  
+  .icon{
+    height: 50px;
+  }
+  .icon a {
+    font-size: 30px;       /* Tamaño de los íconos */
+    margin: 0 15px;        /* Separación entre ellos */
+    text-decoration: none; /* Quitar subrayado */
+  }
+  
+  .icon a:hover {
+    color: #ffd700;        /* Color al pasar el mouse */
+  }
+
+  /*Box Shadow*/
+
+  .bx-a-5>*{ 
+    box-shadow: 5px 5px var(--bx-color);
+  }
+
+  .bx-a-l-5>*{ 
+    box-shadow: 5px 5px 10px var(--bx-color);
+  }
+  
+  .bx-a-sec{
+    --bx-color: var(--sec_color);
+  }
+
+  .bx-a-ter{
+    --bx-color: var(--ter_color);
+  }
+
+  .bx-a-green{
+    --bx-color: --sec_color;
+  }
+
+  .bx-a-green-8{
+    --bx-color: rgba(0, 0, 0, 0.8);
+    --bx-color-o: rgba(5, 5, 5, 0.2);
+  }
+
+  .bx-a-green-6{
+    --bx-color: rgba(0,128,0,0.6);
+    --bx-color-o: rgba(0,128,0,0.2);
+  }
+
+  .bx-a-green-4{
+    --bx-color: rgba(0,128,0,0.4);
+    --bx-color-o: rgba(0,128,0,0.2);
+  }
+
+  .ef-button>*:active{
+    box-shadow: none;
+    position: relative;
+    top:5px;
+    left: 5px;
+  }
+  
+  .ef-light>*:active{
+    box-shadow: 1px 1px 10px 10px var(--bx-color);
+    position: relative;
+  }
+
+  .btnfos-5>* {
+    border: 0 solid;
+    box-shadow: inset 0 0 20px var(--bx-color-o);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 0px;
+    text-shadow: none;
+    -webkit-transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+            transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+    outline-color: var(--bx-color);
+    outline-offset: 0px;
+  }
+
+  .btnfos-5>*:active {
+    border: 1px solid;
+    box-shadow: inset 0 0 20px var(--bx-color), 0 0 20px var(--bx-color-o);
+    outline-offset: 15px;
+    outline-color: rgba(255, 255, 255, 0);
+    text-shadow: 1px 1px 2px #4daad1;
+  }
+
+  /*media query*/
+
+  @media only screen and (max-width: 376px){
+    main{
+        min-width: none;
+    }
+    .br_all_10{
+      border-radius: initial;
+    }
+    
+    
+}
+
+.title-container-mod{
+  padding-top: 6rem;
+
+}
+
+.title-mod{
+  font-size: 1.8rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.icon_mod{
+  padding-top: 3rem;
+  padding-bottom: 2.5rem;
+
+}
+
+.btn-mod{
+
+  cursor:pointer;
+    position:relative;
+    padding:9px ;
+    margin: 0.6rem;
+    background:white;
+    font-size:18px;
+    border-top-right-radius:10px;
+    border-bottom-left-radius:10px;
+    transition:all 1s;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+   
+    &:after,&:before{
+      content:" ";
+      width:10px;
+      height:10px;
+      position:absolute;
+      border :0px solid #fff;
+      transition:all 1s;
+      }
+    &:after{
+      top:-1px;
+      left:-1px;
+      border-top:5px solid var(--sec_color);
+      border-left:5px solid var(--sec_color);
+    }
+    &:before{
+      bottom:-1px;
+      right:-1px;
+      border-bottom:5px solid var(--sec_color);
+      border-right:5px solid var(--sec_color);
+    }
+    &:hover{
+      border-top-right-radius:0px;
+    border-bottom-left-radius:0px;
+      background:var(--sec_color);
+      color:white;
+      &:before,&:after{
+        
+        width:100%;
+        height:100%;
+        border-color:white;
+      }
+    }
+  }
+  
+  .data-container{
+    background:#ffebee;
+    height:100vh;
+    scale:2; 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }

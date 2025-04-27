@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Clip-path modificable desde CSS</title>
+  <link rel="stylesheet" href="./css/style2.css">
+</head>
+<body>
+
+<svg class="avatar" width="300" height="300" viewBox="0 0 300 300">
+
+  <!-- Definiciones de formas (clipPath) en <defs> -->
+  <defs>
+    <!-- 1) ClipPath con círculo -->
+    <clipPath id="clipCircle">
+      <circle cx="150" cy="150" r="100" />
+    </clipPath>
+
+    <!-- 2) ClipPath con polígono (por ejemplo, triángulo) -->
+    <clipPath id="clipTriangle">
+      <!-- Vértices: (150,0), (300,300), (0,300) -->
+      <polygon points="150,0 300,300 0,300" />
+    </clipPath>
+  </defs>
+
+  <!-- Imagen que recortaremos -->
+  <!-- NOTA: la clase circle-clip usa el clipPath del #clipCircle -->
+  <image 
+    x="0" 
+    y="0" 
+    width="300" 
+    height="300"
+    xlink:href="./img/avatar.webp" 
+    class="circle-clip"
+  />
+
+  <!-- Figura para el borde. Por defecto es un <circle> en posición y tamaño que 
+       coincide con el clipPath circular. Se estiliza via .border-circle en CSS -->
+  <!-- 
+    Si quisieras tener también un polígono para el borde, 
+    podrías añadirlo en el SVG (normalmente oculto) y cambiar de clase 
+    dependiendo de la forma deseada (ver ejemplo en CSS).
+    -->
+    <polygon 
+       
+      class="border-circle"
+    />
+  
+
+</svg>
+
+</body>
+</html>

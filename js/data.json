@@ -1,0 +1,37 @@
+{
+    "title": "template1",
+    "name":"SolTech",
+    "url-img":"./img/avatar.webp",
+    "social":[
+        {
+            "name":"facebook",
+            "url":"www.facebook.com"
+        },
+        {
+            "name":"instagram",
+            "url":"#"
+        },
+        {
+            "name":"tiktok",
+            "url":"#"
+        },
+        {
+            "name":"twiter",
+            "url":""
+        }
+    ],
+    "button":[
+        {
+            "name":"button1",
+            "url":"#"
+        },
+        {
+            "name":"button2",
+            "url":"#"
+        },
+        {
+            "name":"button3",
+            "url":"#"
+        }
+    ]
+}
