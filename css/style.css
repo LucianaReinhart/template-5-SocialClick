@@ -281,7 +281,7 @@
     height: 50px;
   }
   .icon a {
-    font-size: 30px;       /* Tamaño de los íconos */
+    font-size: 2.2rem;       /* Tamaño de los íconos */
     margin: 0 15px;        /* Separación entre ellos */
     text-decoration: none; /* Quitar subrayado */
   }
@@ -386,13 +386,13 @@
 }
 
 .title-mod{
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .icon_mod{
-  padding-top: 3rem;
-  padding-bottom: 2.5rem;
+  padding-top: 3.8rem;
+  padding-bottom: 2.8rem;
 
 }
 
@@ -400,10 +400,10 @@
 
   cursor:pointer;
     position:relative;
-    padding:9px ;
-    margin: 0.6rem;
+    padding: 0.9rem ;
+    margin: 0.8rem;
     background:white;
-    font-size:18px;
+    font-size:1.3rem;
     border-top-right-radius:10px;
     border-bottom-left-radius:10px;
     transition:all 1s;
