@@ -1,9 +1,7 @@
 :root {
-    --bk_color: #101929;
-    --bx-color: #101929;
-    --sec_color: #101929;
-    --ter_color: #ffffff;
-    --cua_color:#313131; 
+    --bk_color:  #140f0e;
+    --bx-color:  #83100e;
+    --ter_color:  #f8a731; 
 }
   
   /* RESET BÁSICO */
@@ -388,13 +386,13 @@
 .title-mod{
   font-size: 1.7rem;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: #6c744a;
+  color: var(--bk_color);
 }
 
 .icon_mod{
   padding-top: 3.8rem;
   padding-bottom: 2.8rem;
-
+  
 }
 
 .icon-box {
@@ -405,7 +403,8 @@
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-
+  border-radius: 15PX;
+  background-color: #0000;
 }
 
 .icon-box i {
@@ -475,7 +474,7 @@
       conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
       var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
     transition: .3s linear, color 0s, background-color 0s;
-    outline: var(--b) solid #0000;
+    outline: var(--b) solid #462f2f00;
     outline-offset: .6em;
     font-size: 18px;
   
@@ -498,4 +497,116 @@
     background: var(--color);
     color: #fff;
   }
+
+  /* CSS */
+  .button-40 {
+    background-color: var(--bk_color);
+    border: 1px solid transparent;
+    border-radius: .75rem;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex: 0 0 auto;
+    font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    padding: .75rem;
+    text-align: center;
+    text-decoration: none #6B7280 solid;
+    text-decoration-thickness: auto;
+    transition-duration: .2s;
+    transition-property: background-color,border-color,color,fill,stroke;
+    transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-top: 1.7rem;
+  }
   
+  .button-40:hover {
+    background-color: #374151;
+  }
+  
+  .button-40:focus {
+    box-shadow: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+  
+  @media (min-width: 768px) {
+    .button-40 {
+      padding: .75rem 1.5rem;
+    }
+  }
+
+
+/* CSS */
+.button-74 {
+  background-color: #83100e;
+  border: 2px solid #140f0e;
+  border-radius: 30px;
+  box-shadow: #140f0e 4px 4px 0 0;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-top: 1.6rem;
+}
+
+.button-74:hover {
+  background-color: #fff;
+  color: var(--bx-color);
+}
+
+.button-74:active {
+  box-shadow: #140f0e 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-74 {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+
+
+
+
+.icon-button {
+  background-color: #83100e;
+  border: 2px solid #140f0e;
+  border-radius: 30px;
+  box-shadow: #140f0e 4px 4px 0 0;
+  color: white; /* color del ícono */
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  width: 60px;
+  height: 60px;
+  text-decoration: none;
+  user-select: none;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  
+}
+
+.icon-button:hover {
+  background-color: #fff;
+  color: #83100e; /* cambio de color del ícono al hacer hover */
+}
+
+.icon-button:active {
+  box-shadow: #140f0e 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
